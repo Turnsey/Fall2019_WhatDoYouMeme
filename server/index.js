@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const path = require('path')
 
 app.get('/', (req, res) => res.send('Hello New Paltz!'));
+
+app.use('/static', express.static(path.join(__dirname, '../NoFramework')))
 
 app.get('/heb', function(req, res){
             res.send('Shalom World!')
