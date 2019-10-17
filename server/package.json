@@ -1,14 +1,13 @@
 {
-  "name": "what_do_you_meme",
+  "name": "what-do-you-meme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "license": "ISC",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
   },
