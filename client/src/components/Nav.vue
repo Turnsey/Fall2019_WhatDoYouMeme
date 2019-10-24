@@ -6,14 +6,14 @@
       W_D_Y_M
     </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a @click.prevent="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
     <div class="navbar-start">
 
     <router-link to="/">
@@ -72,7 +72,11 @@
 
 <script>
 export default {
-
+    data(){
+        return{
+            isOpen: false
+        }
+    }
 }
 </script>
 
