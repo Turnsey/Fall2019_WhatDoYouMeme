@@ -1,7 +1,10 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        
+        <router-link class="navbar-item" to="/">
+        <i class="fas-fa-home fa-pull-left"></i>
+        Home 
+        </router-link>
 
         <a @click.prevent="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -17,9 +20,15 @@
             <i class="fas fa-home fa-pull-left"></i>
             Home
         </router-link>
+        
         <router-link class="navbar-item" to="/about">
             <i class="fab fa-vuejs fa-pull-left"></i>
             About
+        </router-link>
+
+        <router-link class="navbar-item" to="/game">
+            <i class="fas fa-ghost fa-pull-left"></i>
+            Game
         </router-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
@@ -72,4 +81,13 @@ export default {
 </script>
 
 <style>
+  .active {
+    background-color: aliceblue;
+    font-weight: bold;
+  }
+
+  .kind-of-active {
+    background-color: rgb(244, 250, 100);
+    font-weight: bold;
+  }
 </style>
