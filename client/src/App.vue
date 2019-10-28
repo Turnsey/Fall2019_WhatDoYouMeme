@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <Nav></Nav>
-      
+    <Head></Head>
+      <Nav></Nav>
     <router-view/>
+  <Foot></Foot>
   </div>
 </template>
 
@@ -11,10 +12,12 @@
 
 <script>
 import Nav from './components/Nav'
+import Head from './components/Head'
+import Foot from './components/Foot'
 
 export default {
     components: {
-      Nav
+      Nav, Head, Foot
     }
 }
 </script>
