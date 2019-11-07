@@ -1,19 +1,18 @@
 const express = require('express');
-const users = require("../models/Users");
+const { Game } = require("../models/Game").Game;
 const app = express.Router();
 
-const game = {
-    users: [],
-    pictureCards: [],
-    quoteCards: [],
+app.get('/', (req, res)=>{
+    res.send(Game.Get_State());
+} );
 
-    dealer: 0
-}
+app.get('/hand', (req, res)=>{
+    res.send(Game.Get_Hand());
+} );
 
-app.post('/join', (req, res)=>{
-    const userId = req.query.userId
-    game.users.push( users[userId] );
-    res.send(users[userId])
+app.get('/picture/flip', (req, res)=>{
+    Game.Flip_Picture();
+    res.send({ success: true, url: Game.Picture_In_Play })
 } );
 
 module.exports = app;
