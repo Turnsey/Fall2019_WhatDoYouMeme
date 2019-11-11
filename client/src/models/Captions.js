@@ -1,4 +1,4 @@
-module.exports = ["Enjoy at least one sunset per day! – Modern Family"
+export default ["Enjoy at least one sunset per day! – Modern Family"
 , "They say don’t try this at home…so I went to my friends home!"
 , "My bed is a magical place I suddenly remember everything I had to do."
 , "Friday, my second favorite F word."

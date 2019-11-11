@@ -1,9 +1,10 @@
 <template>
   <div class="container">
-    <Head></Head>
-      <Nav></Nav>
+    <Header></Header>
+    <Nav></Nav>
+
     <router-view/>
-  <Foot></Foot>
+    <MyFooter></MyFooter>
   </div>
 </template>
 
@@ -11,13 +12,13 @@
 </style>
 
 <script>
-import Nav from './components/Nav'
-import Head from './components/Head'
-import Foot from './components/Foot'
+import Nav from './components/Nav';
+import MyFooter from './components/Footer';
+import Header from './components/Header';
 
 export default {
     components: {
-      Nav, Head, Foot
+      Nav, MyFooter, Header
     }
 }
 </script>

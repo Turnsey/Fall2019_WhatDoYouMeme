@@ -1,4 +1,4 @@
-import { api } from "./my-fetch"
+import { api } from "./my-fetch";
 
 export const Game_Server = {
     Get_Hand(amount = 7){
@@ -12,6 +12,7 @@ export const Game_Server = {
     }
 }
 
+//  Just to remind us the shape of a player
 export class Player {
     name;
     points;
