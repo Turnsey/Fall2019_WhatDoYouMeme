@@ -1,7 +1,7 @@
 <template>
-    <div>
+<div>
     <h1 class="is-size-1">
-     Login
+        Login
     </h1> 
 
     <div class="columns">
@@ -12,72 +12,67 @@
                     Login
                 </p>
                 <div class="panel-block">
-                    <div class="field has-addons">
 
-                    <div class="field" :class="{ 'is-danger' }">
-                        <div class="control has-icons-left has-icons-right">
-                        <input vmodel="name" class="input" type="text" placeholder="Your Name">
-                        <span class="icon is-small is-left">
-                        <i class="fas fa-envelope"></i>
-                        </span>
-                        <span class="icon is-small is-right">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        </span>
-                    </div>
-                    </div>
-
-                        <div class="control is-expanded">
-                            <input v-model="name" class="input" type="text" placeholder="Enter Username">
-                     </div>
-                        <div class="control">
-                            <a class="button is-info" @click.prevent="join">
-                            Login
-                            </a>
+                    <div class="field" :class="{ 'is-danger': error }">
+                        <div class="field has-addons">
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="name" class="input" type="text" placeholder="Your Name">
+                                
+                                <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                            </div>
+                            <div class="control">
+                                <a class="button is-info" @click.prevent="join">
+                                Login
+                                </a>
+                            </div>
                         </div>
+                        <p class="help is-danger">{{error}}</p>
                     </div>
-                    <p class="help is-danger">This email is invalid</p>
+                    
                 </div>
             </ul>
         </div>
     </div>
-  </div>
+</div>
+
 </template>
 
 <script>
-import { Game_Server } from "../models/Game"
+import { Game_Server } from "../models/Game";
 export default {
     data: ()=>({
         name: "",
         error: ""
     }),
     methods: {
-        async join(){
+        join(){
             Game_Server.Join(this.name)
-            .catch(err=>{ 
-            console.log(err);
-            this.error = err.message;
-            })
-            .then(x=> this.$router.push( { name: 'game' } ))
+                .then(x=> this.$router.push( { name: 'game'} ) )
+                .catch(err=> {
+                    console.error(err);
+                    this.error = err.message;
+                });
         }
     }
-
 }
 </script>
 
 <style lang="scss">
-
     .fas.fa-exclamation-triangle {
         display: none;
     }
-
-    .is-danger{
+    .is-danger {
         .fa-exclamation-triangle {
-        display: inline;
-        color: red;
+            display: inline;
+            color: red;
         }
-        .input{
+        .input {
             border-color: red;
         }
     }
-
 </style>
