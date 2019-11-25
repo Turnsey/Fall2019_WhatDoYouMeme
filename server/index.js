@@ -15,8 +15,8 @@ app.use(function(req, res, next) {
 
 app
     .use(function(req, res, next){
-        const arr = req.headers.authorization.split(" ")
-        if(arr.length > 1 && +arr[1]){
+        const arr = (req.headers.authorization || "").split(" ");
+        if(arr.length > 1 && arr[1] != null){
             req.user_id = +arr[1];
         }else{
             next(new CustomError(403, "Please Log In"))

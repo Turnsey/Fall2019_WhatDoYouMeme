@@ -1,7 +1,6 @@
 const Caption_Deck = require('./Captions');
 const { CustomError } = require('./CustomError');
 
-
 module.exports.Game = {
     Players: [
         { name: "Moshe", points: 0 },
@@ -37,6 +36,9 @@ module.exports.Game = {
         }
         this.Players.push({ name, score: 0 });
         return this.Players.length  - 1;
+    },
+    Submit_Caption(player_id, text){
+        this.Captions_In_Play.push( { player_id, text } );
     },
     Get_State(){
         return {
