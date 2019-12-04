@@ -1,7 +1,7 @@
 <template>
-  <div>
+<div>
     <h1 class="is-size-1">
-     Choose a Game to Join
+        Choose a game to Join
     </h1> 
 
     <div class="columns">
@@ -12,13 +12,13 @@
                     Games
                 </p>
                 <div class="panel-block">
-                    Right Now There is Only One Game.
-                    <router-link to="/game" class="button is-primary">Go</router-link>
+                    Right Now there is only one game.
+                    <router-link to="/game" class="button is-primary" >Go</router-link>
                 </div>
             </ul>
         </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>

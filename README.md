@@ -1,2 +1,4 @@
-# Fall2019_WhatDoYouMeme
-Main In-class project of Fall 2019
+# Main in class project for Fall 2019
+This is a paragraph with *some* realy **important** information
+
+Some other **great** information
